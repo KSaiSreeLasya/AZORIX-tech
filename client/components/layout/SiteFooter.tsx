@@ -60,14 +60,27 @@ India</li><br />
         </div>
       </div>
       <div className="border-t">
-        <div className="container py-6 text-xs text-muted-foreground flex items-center justify-between">
-          <p>
-            © {new Date().getFullYear()} Azorix Technologies. All rights
-            reserved.
-          </p>
-          <p>Privacy · Terms</p>
-        </div>
-      </div>
+  <div className="container py-6 text-xs text-muted-foreground flex items-center justify-between">
+    <p>
+      © {new Date().getFullYear()} Azorix Technologies. All rights reserved.
+    </p>
+    <p>
+      <Link
+        to="/privacypolicy"
+        className="hover:text-foreground transition-colors"
+      >
+        Privacy Policy
+      </Link>
+      {" · "}
+      <Link
+        to="/TermsOfService"
+        className="hover:text-foreground transition-colors"
+      >
+        Terms & Conditions
+      </Link>
+    </p>
+  </div>
+</div>
     </footer>
   );
 }
