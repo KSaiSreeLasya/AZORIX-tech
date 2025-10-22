@@ -69,14 +69,14 @@ India</li><br />
     </p>
     <p>
       <Link
-        to="/PrivacyPolicy"
+        to="/privacy"
         className="hover:text-foreground transition-colors"
       >
         Privacy Policy
       </Link>
       {" · "}
       <Link
-        to="/TermsOfService"
+        to="/terms"
         className="hover:text-foreground transition-colors"
       >
         Terms & Conditions
