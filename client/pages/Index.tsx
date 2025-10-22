@@ -116,7 +116,16 @@ export default function Index() {
         toast.success(`Thanks ${name || "there"}! We'll get back to you shortly.`);
         e.currentTarget.reset();
       } else {
-        const errorMsg = data?.error || "Failed to send message. Please try again.";
+        let errorMsg = data?.error || "Failed to send message. Please try again.";
+
+        // Show detailed validation errors
+        if (data?.details && Array.isArray(data.details) && data.details.length > 0) {
+          const detail = data.details[0];
+          if (detail.message) {
+            errorMsg = detail.message;
+          }
+        }
+
         toast.error(errorMsg);
       }
     } catch (error) {
