@@ -254,36 +254,14 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Portfolio - use provided images */}
+      {/* Portfolio */}
       <section id="portfolio" className="bg-slate-50/80 py-16 md:py-24">
         <div className="container">
           <SectionTitle
             title="Our Portfolio"
             subtitle="Explore some of our recent projects"
           />
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            <a
-              href="https://nipige.com/"
-              target="_blank"
-              rel="noreferrer noopener"
-              className="block rounded-xl overflow-hidden"
-            >
-              <img
-                src="https://cdn.builder.io/api/v1/image/assets%2F1b9c62c1213140709e07580a4ee1f322%2Fbc943ca84d2a4a93ac09b72fdb405836?format=webp&width=800"
-                alt="portfolio1"
-                className="w-full h-40 object-cover"
-              />
-            </a>
-            <a className="block rounded-xl overflow-hidden">
-              <img
-                src="https://cdn.builder.io/api/v1/image/assets%2F1b9c62c1213140709e07580a4ee1f322%2F613e7e26f2f443f391fea781db37b1bf?format=webp&width=800"
-                alt="portfolio2"
-                className="w-full h-40 object-cover"
-              />
-            </a>
-            <div className="rounded-xl border bg-gradient-to-br from-cyan-200 to-emerald-200/70 h-40" />
-            <div className="rounded-xl border bg-gradient-to-br from-cyan-200 to-emerald-200/70 h-40" />
-          </div>
+          <PortfolioTabs />
         </div>
       </section>
 
