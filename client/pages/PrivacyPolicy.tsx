@@ -133,7 +133,7 @@ export default function PrivacyPolicy() {
                       Mathrusri Nagar, K.v.rangareddy, Serilingampally,<br/>
                       Hyderabad, Telangana 500049<br/>
                       <strong>Email:</strong> info@azorix.com<br />
-                      <strong>Phone:</strong> +91 9052653636
+                      <strong>Phone:</strong> +91 9392193639
                     </p>
                   </div>
                 </div>
