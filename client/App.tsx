@@ -10,6 +10,10 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Layout from "@/components/layout/Layout";
 
+// ✅ Import your new pages
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import Terms from "./pages/TermsOfService";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -24,6 +28,25 @@ const App = () => (
             element={
               <Layout>
                 <Index />
+              </Layout>
+            }
+          />
+          {/* ✅ Privacy Policy Page */}
+          <Route
+            path="/PrivacyPolicy"
+            element={
+              <Layout>
+                <PrivacyPolicy />
+              </Layout>
+            }
+          />
+
+          {/* ✅ Terms & Conditions Page */}
+          <Route
+            path="/TermsOfService"
+            element={
+              <Layout>
+                <Terms />
               </Layout>
             }
           />
