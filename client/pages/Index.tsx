@@ -105,13 +105,19 @@ export default function Index() {
         body: JSON.stringify({ name, email, subject, message }),
       });
 
-      const data = await response.json();
+      let data: any;
+      try {
+        data = await response.json();
+      } catch {
+        data = { success: false, error: "Invalid response from server" };
+      }
 
       if (response.ok && data.success) {
         toast.success(`Thanks ${name || "there"}! We'll get back to you shortly.`);
         e.currentTarget.reset();
       } else {
-        toast.error(data.error || "Failed to send message. Please try again.");
+        const errorMsg = data?.error || "Failed to send message. Please try again.";
+        toast.error(errorMsg);
       }
     } catch (error) {
       console.error("Contact form error:", error);
