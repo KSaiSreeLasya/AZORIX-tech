@@ -114,7 +114,10 @@ export default function Index() {
       }
 
       if (response.ok && data.success) {
-        toast.success(`Thanks ${name || "there"}! We'll get back to you shortly.`);
+        await showSuccessAlert(
+          "Message Sent!",
+          `Thanks ${name || "there"}! We've received your message and will get back to you shortly.`
+        );
         e.currentTarget.reset();
       } else {
         let errorMsg = data?.error || "Failed to send message. Please try again.";
@@ -127,11 +130,11 @@ export default function Index() {
           }
         }
 
-        toast.error(errorMsg);
+        await showErrorAlert("Oops!", errorMsg);
       }
     } catch (error) {
       console.error("Contact form error:", error);
-      toast.error("Failed to send message. Please try again.");
+      await showErrorAlert("Error", "Failed to send message. Please try again.");
     }
   };
 
