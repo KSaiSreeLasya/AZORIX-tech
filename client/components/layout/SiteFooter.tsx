@@ -55,35 +55,42 @@ export function SiteFooter() {
           <ul className="space-y-2 text-sm text-muted-foreground">
             <li>info@azorixtech.com</li>
             <li>+91 9392193639</li>
-            <li>Plot No 102,103, Temple Lane, Mythri Nagar,<br />
-Mathrusri Nagar, K.v.rangareddy, Serilingampally,<br />
-Hyderabad, Telangana 500049<br />
-India</li><br />
+            <li>
+              Plot No 102,103, Temple Lane, Mythri Nagar,
+              <br />
+              Mathrusri Nagar, K.v.rangareddy, Serilingampally,
+              <br />
+              Hyderabad, Telangana 500049
+              <br />
+              India
+            </li>
+            <br />
           </ul>
         </div>
       </div>
       <div className="border-t">
-  <div className="container py-6 text-xs text-muted-foreground flex items-center justify-between">
-    <p>
-      © {new Date().getFullYear()} Azorix Technologies. All rights reserved.
-    </p>
-    <p>
-      <Link
-        to="/PrivacyPolicy"
-        className="hover:text-foreground transition-colors"
-      >
-        Privacy Policy
-      </Link>
-      {" · "}
-      <Link
-        to="/TermsOfService"
-        className="hover:text-foreground transition-colors"
-      >
-        Terms & Conditions
-      </Link>
-    </p>
-  </div>
-</div>
+        <div className="container py-6 text-xs text-muted-foreground flex items-center justify-between">
+          <p>
+            © {new Date().getFullYear()} Azorix Technologies. All rights
+            reserved.
+          </p>
+          <p>
+            <Link
+              to="/privacy"
+              className="hover:text-foreground transition-colors"
+            >
+              Privacy Policy
+            </Link>
+            {" · "}
+            <Link
+              to="/terms"
+              className="hover:text-foreground transition-colors"
+            >
+              Terms & Conditions
+            </Link>
+          </p>
+        </div>
+      </div>
     </footer>
   );
 }
