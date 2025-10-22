@@ -50,9 +50,12 @@ export function SiteFooter() {
         <div>
           <p className="font-semibold mb-3">Contact</p>
           <ul className="space-y-2 text-sm text-muted-foreground">
-            <li>hello@azorix.com</li>
-            <li>+1 (555) 555-1234</li>
-            <li>San Francisco, CA</li>
+            <li>info@azorixtech.com</li>
+            <li>+91 9392193639</li>
+            <li>Plot No 102,103, Temple Lane, Mythri Nagar,<br />
+Mathrusri Nagar, K.v.rangareddy, Serilingampally,<br />
+Hyderabad, Telangana 500049<br />
+India</li><br />
           </ul>
         </div>
       </div>
