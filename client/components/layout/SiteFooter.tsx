@@ -69,7 +69,7 @@ India</li><br />
     </p>
     <p>
       <Link
-        to="/privacypolicy"
+        to="/PrivacyPolicy"
         className="hover:text-foreground transition-colors"
       >
         Privacy Policy
