@@ -122,7 +122,7 @@ export default function Index() {
         <div className="grid gap-10 md:grid-cols-2 items-center">
           <div className="mx-auto w-full max-w-lg">
             <img
-              src="https://cdn.builder.io/api/v1/image/assets%2F1b9c62c1213140709e07580a4ee1f322%2Fdf34569092fa4695a4f9a031f8cec94e?format=webp&width=1200"
+              src="https://images.unsplash.com/photo-1557800636-894a64c1696f?auto=format&fit=crop&w=1200&q=80"
               alt="About illustration"
               className="rounded-2xl border bg-white shadow-lg w-full"
             />
