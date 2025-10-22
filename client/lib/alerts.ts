@@ -3,7 +3,7 @@ import { toast } from "sonner";
 interface AlertOptions {
   title: string;
   text?: string;
-  type?: 'success' | 'error' | 'info' | 'warning';
+  type?: "success" | "error" | "info" | "warning";
 }
 
 /**
@@ -28,14 +28,16 @@ export function showErrorAlert(title: string, text?: string) {
 }
 
 export function showAlert(options: AlertOptions) {
-  const message = options.text ? `${options.title}\n${options.text}` : options.title;
-  const type = options.type || 'info';
+  const message = options.text
+    ? `${options.title}\n${options.text}`
+    : options.title;
+  const type = options.type || "info";
 
-  if (type === 'success') {
+  if (type === "success") {
     return showSuccessAlert(message);
-  } else if (type === 'error') {
+  } else if (type === "error") {
     return showErrorAlert(message);
-  } else if (type === 'warning') {
+  } else if (type === "warning") {
     toast.warning(message, {
       duration: 4000,
       position: "top-center",

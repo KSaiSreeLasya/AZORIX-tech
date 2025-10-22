@@ -32,7 +32,8 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
     id: "fitness-app",
     title: "Fitness Tracking App",
     category: "mobile",
-    description: "Mobile app for tracking fitness activities and health metrics",
+    description:
+      "Mobile app for tracking fitness activities and health metrics",
     image: "https://images.pexels.com/photos/4426517/pexels-photo-4426517.jpeg",
     alt: "Person checking fitness tracker app on smartphone",
   },

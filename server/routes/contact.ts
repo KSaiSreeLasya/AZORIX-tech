@@ -5,7 +5,10 @@ const ContactSchema = z.object({
   name: z.string().min(1, "Name is required").max(255),
   email: z.string().email("Invalid email").max(255),
   subject: z.string().min(1, "Subject is required").max(255),
-  message: z.string().min(10, "Message must be at least 10 characters").max(5000),
+  message: z
+    .string()
+    .min(10, "Message must be at least 10 characters")
+    .max(5000),
 });
 
 export type ContactFormData = z.infer<typeof ContactSchema>;
@@ -66,7 +69,8 @@ export const handleContactSubmission: RequestHandler = async (req, res) => {
 
     return res.status(201).json({
       success: true,
-      message: "Thank you! We've received your message and will get back to you shortly.",
+      message:
+        "Thank you! We've received your message and will get back to you shortly.",
     });
   } catch (error) {
     console.error("Contact submission error:", error);

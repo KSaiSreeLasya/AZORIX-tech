@@ -50,13 +50,13 @@ export default function Index() {
         title: "Mobile App Development",
         desc: "Native and cross-platform mobile applications that engage users and drive business growth.",
       },
-   
+
       {
         icon: <Database />,
         title: "Data Analytics",
         desc: "Transform your data into actionable insights with our advanced analytics and visualization solutions.",
       },
-     
+
       {
         icon: <Brain />,
         title: "AI & Machine Learning",
@@ -117,14 +117,19 @@ export default function Index() {
       if (response.ok && data.success) {
         await showSuccessAlert(
           "Message Sent!",
-          `Thanks ${name || "there"}! We've received your message and will get back to you shortly.`
+          `Thanks ${name || "there"}! We've received your message and will get back to you shortly.`,
         );
         formElement.reset();
       } else {
-        let errorMsg = data?.error || "Failed to send message. Please try again.";
+        let errorMsg =
+          data?.error || "Failed to send message. Please try again.";
 
         // Show detailed validation errors
-        if (data?.details && Array.isArray(data.details) && data.details.length > 0) {
+        if (
+          data?.details &&
+          Array.isArray(data.details) &&
+          data.details.length > 0
+        ) {
           const detail = data.details[0];
           if (detail.message) {
             errorMsg = detail.message;
@@ -135,7 +140,10 @@ export default function Index() {
       }
     } catch (error) {
       console.error("Contact form error:", error);
-      await showErrorAlert("Error", "Failed to send message. Please try again.");
+      await showErrorAlert(
+        "Error",
+        "Failed to send message. Please try again.",
+      );
     }
   };
 

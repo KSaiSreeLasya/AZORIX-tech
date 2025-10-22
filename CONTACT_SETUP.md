@@ -1,6 +1,7 @@
 # Contact Form Setup Guide
 
 ## Overview
+
 This document provides all the necessary SQL queries and setup instructions for the contact form feature that saves submissions to Supabase.
 
 ## Step 1: Create the Contacts Table in Supabase
@@ -43,7 +44,7 @@ CREATE POLICY "Enable read for authenticated users" ON contacts
 
 ```sql
 CREATE OR REPLACE VIEW contact_stats AS
-SELECT 
+SELECT
   COUNT(*) as total_contacts,
   COUNT(DISTINCT email) as unique_emails,
   MAX(created_at) as latest_contact
@@ -60,6 +61,7 @@ VITE_SUPABASE_ANON_KEY=your-anon-key-here
 ```
 
 **Where to find these:**
+
 1. Go to https://app.supabase.com
 2. Select your project
 3. Go to Settings → API
@@ -68,9 +70,11 @@ VITE_SUPABASE_ANON_KEY=your-anon-key-here
 ## Step 3: API Endpoints
 
 ### Submit Contact Form
+
 **Endpoint:** `POST /api/contact`
 
 **Request Body:**
+
 ```json
 {
   "name": "John Doe",
@@ -81,6 +85,7 @@ VITE_SUPABASE_ANON_KEY=your-anon-key-here
 ```
 
 **Response (Success):**
+
 ```json
 {
   "success": true,
@@ -89,6 +94,7 @@ VITE_SUPABASE_ANON_KEY=your-anon-key-here
 ```
 
 **Response (Error):**
+
 ```json
 {
   "success": false,
@@ -100,30 +106,35 @@ VITE_SUPABASE_ANON_KEY=your-anon-key-here
 ## Step 4: Query the Submissions in Supabase
 
 ### Get All Contacts
+
 ```sql
 SELECT * FROM contacts ORDER BY created_at DESC;
 ```
 
 ### Get Contacts from Last 7 Days
+
 ```sql
-SELECT * FROM contacts 
+SELECT * FROM contacts
 WHERE created_at >= NOW() - INTERVAL '7 days'
 ORDER BY created_at DESC;
 ```
 
 ### Get Contact Statistics
+
 ```sql
 SELECT * FROM contact_stats;
 ```
 
 ### Get Contacts by Email
+
 ```sql
 SELECT * FROM contacts WHERE email = 'example@email.com';
 ```
 
 ### Count Submissions by Day
+
 ```sql
-SELECT 
+SELECT
   DATE(created_at) as submission_date,
   COUNT(*) as count
 FROM contacts
@@ -132,9 +143,10 @@ ORDER BY submission_date DESC;
 ```
 
 ### Get Contacts Containing Specific Keyword
+
 ```sql
-SELECT * FROM contacts 
-WHERE message ILIKE '%keyword%' 
+SELECT * FROM contacts
+WHERE message ILIKE '%keyword%'
 OR subject ILIKE '%keyword%'
 ORDER BY created_at DESC;
 ```
@@ -147,7 +159,7 @@ The contact form is already integrated in `client/pages/Index.tsx`:
 const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
   e.preventDefault();
   const form = new FormData(e.currentTarget);
-  
+
   const response = await fetch("/api/contact", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -158,7 +170,7 @@ const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
       message: form.get("message"),
     }),
   });
-  
+
   if (response.ok) {
     toast.success("Thank you! We'll get back to you shortly.");
     e.currentTarget.reset();
@@ -175,8 +187,8 @@ const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 CREATE POLICY "Enable delete for admin users" ON contacts
   FOR DELETE USING (
     EXISTS (
-      SELECT 1 FROM auth.users 
-      WHERE id = auth.uid() 
+      SELECT 1 FROM auth.users
+      WHERE id = auth.uid()
       AND email LIKE '%@admin.com'
     )
   );
@@ -221,16 +233,19 @@ Policies:
 ## Troubleshooting
 
 ### "Failed to save contact submission"
+
 - Check that the `contacts` table exists in Supabase
 - Verify RLS policies are correctly set
 - Check browser console for detailed error messages
 
 ### "Validation failed"
+
 - Ensure all required fields are filled
 - Message must be at least 10 characters
 - Email must be a valid format
 
 ### Environment Variables Not Found
+
 - Make sure `.env` file exists in project root
 - Restart the dev server after adding variables
 - Use `DevServerControl` tool to set sensitive variables
@@ -238,6 +253,7 @@ Policies:
 ## Production Deployment
 
 For production, it's recommended to:
+
 1. Use environment secrets for sensitive keys (never commit to git)
 2. Add email notifications when new contacts arrive
 3. Implement rate limiting on the `/api/contact` endpoint
