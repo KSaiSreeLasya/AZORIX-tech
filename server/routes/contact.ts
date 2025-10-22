@@ -56,8 +56,8 @@ export const handleContactSubmission: RequestHandler = async (req, res) => {
     });
 
     if (!response.ok) {
-      const errorData = await response.text();
-      console.error("Supabase error:", errorData);
+      const errorText = await response.text();
+      console.error("Supabase error:", response.status, errorText);
       return res.status(500).json({
         error: "Failed to save contact submission",
         success: false,
