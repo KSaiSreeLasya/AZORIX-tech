@@ -389,16 +389,18 @@ export default function Index() {
             />
             <ul className="space-y-4 text-muted-foreground">
               <li>
-                <strong className="text-foreground">Our Location:</strong> 500
-                Market St, San Francisco, CA
+                <strong className="text-foreground">Our Location:</strong> Plot No 102,103, Temple Lane, Mythri Nagar,<br />
+                Mathrusri Nagar, K.v.rangareddy, Serilingampally,<br />
+                Hyderabad, Telangana 500049<br />
+                India<br />
+               
               </li>
               <li>
                 <strong className="text-foreground">Email Us:</strong>{" "}
-                hello@azorix.com
+                info@azorixtech.com
               </li>
               <li>
-                <strong className="text-foreground">Call Us:</strong> +1 (555)
-                555‑1234
+                <strong className="text-foreground">Call Us:</strong> +91 9392193639
               </li>
             </ul>
           </div>
