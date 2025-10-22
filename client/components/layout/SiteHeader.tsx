@@ -16,7 +16,9 @@ const nav = [
 export function Logo({ className }: { className?: string }) {
   return (
     <div className={cn("flex items-center gap-2", className)}>
-      <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-cyan-500 to-emerald-500 text-white grid place-items-center font-extrabold">A</div>
+      <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-cyan-500 to-emerald-500 text-white grid place-items-center font-extrabold">
+        A
+      </div>
       <span className="font-extrabold tracking-tight text-xl">Azorix</span>
     </div>
   );
@@ -32,15 +34,25 @@ export function SiteHeader() {
         </a>
         <nav className="hidden md:flex items-center gap-6">
           {nav.map((item) => (
-            <a key={item.href} href={item.href} className="text-sm font-medium text-muted-foreground hover:text-foreground">
+            <a
+              key={item.href}
+              href={item.href}
+              className="text-sm font-medium text-muted-foreground hover:text-foreground"
+            >
               {item.label}
             </a>
           ))}
         </nav>
         <div className="hidden md:block">
-          <a href="#contact"><Button size="sm">Get in touch</Button></a>
+          <a href="#contact">
+            <Button size="sm">Get in touch</Button>
+          </a>
         </div>
-        <button className="md:hidden p-2" aria-label="Toggle menu" onClick={() => setOpen((v) => !v)}>
+        <button
+          className="md:hidden p-2"
+          aria-label="Toggle menu"
+          onClick={() => setOpen((v) => !v)}
+        >
           {open ? <X /> : <Menu />}
         </button>
       </div>
