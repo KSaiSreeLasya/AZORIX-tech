@@ -3,12 +3,11 @@ export function SiteFooter() {
     <footer className="border-t bg-slate-50" id="footer">
       <div className="container grid gap-10 py-14 md:grid-cols-4">
         <div>
-          <div className="flex items-center gap-2 font-extrabold text-xl">
-            <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-cyan-500 to-emerald-500 text-white grid place-items-center">
-              A
-            </div>
-            Azorix
-          </div>
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets%2F8bf52f20c3654880b140d224131cfa2e%2F7d2091e7871d4914a98f4b957203bbbe?format=webp&width=200"
+            alt="Azorix Technologies Logo"
+            className="h-8 w-auto"
+          />
           <p className="mt-4 text-sm text-muted-foreground max-w-xs">
             Transforming ideas into digital reality with modern web, cloud, and
             mobile solutions.
