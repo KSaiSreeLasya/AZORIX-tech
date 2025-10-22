@@ -28,8 +28,8 @@ export const handleContactSubmission: RequestHandler = async (req, res) => {
     const { name, email, subject, message } = validationResult.data;
 
     // Get Supabase client from environment
-    const supabaseUrl = process.env.VITE_SUPABASE_URL;
-    const supabaseKey = process.env.VITE_SUPABASE_ANON_KEY;
+    const supabaseUrl = process.env.SUPABASE_URL;
+    const supabaseKey = process.env.SUPABASE_ANON_KEY;
 
     if (!supabaseUrl || !supabaseKey) {
       console.error("Supabase credentials not configured");
