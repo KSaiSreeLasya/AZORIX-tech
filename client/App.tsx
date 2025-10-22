@@ -33,7 +33,7 @@ const App = () => (
           />
           {/* ✅ Privacy Policy Page */}
           <Route
-            path="/PrivacyPolicy"
+            path="/privacy"
             element={
               <Layout>
                 <PrivacyPolicy />
@@ -43,7 +43,7 @@ const App = () => (
 
           {/* ✅ Terms & Conditions Page */}
           <Route
-            path="/TermsOfService"
+            path="/terms"
             element={
               <Layout>
                 <Terms />

@@ -5,7 +5,7 @@ import SiteFooter from "../components/layout/SiteFooter";
 export default function TermsOfService() {
   return (
     <div className="min-h-screen flex flex-col">
-      <Header />
+      <SiteHeader />
       <main className="flex-1">
         {/* Hero Section */}
         <section className="bg-gradient-to-r from-vlsi-700 to-vlsi-800 text-white py-24">
@@ -174,7 +174,7 @@ export default function TermsOfService() {
           </div>
         </section>
       </main>
-      <Footer />
+      <SiteFooter />
     </div>
   );
 }
