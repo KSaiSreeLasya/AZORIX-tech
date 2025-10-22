@@ -1,14 +1,10 @@
 import React from 'react';
-import { SiteHeader } from "../components/layout/SiteHeader";
-import { SiteFooter } from "../components/layout/SiteFooter";
 
 export default function TermsOfService() {
   return (
-    <div className="min-h-screen flex flex-col">
-      <SiteHeader />
-      <main className="flex-1">
-        {/* Hero Section */}
-        <section className="bg-gradient-to-r from-vlsi-700 to-vlsi-800 text-white py-24">
+    <>
+      {/* Hero Section */}
+      <section className="bg-gradient-to-r from-vlsi-700 to-vlsi-800 text-white py-24">
           <div className="max-w-4xl mx-auto pt-8 px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Terms of Service</h1>
             <p className="text-xl text-vlsi-100 leading-relaxed max-w-3xl mx-auto">
@@ -172,9 +168,7 @@ export default function TermsOfService() {
               </div>
             </div>
           </div>
-        </section>
-      </main>
-      <SiteFooter />
-    </div>
+      </section>
+    </>
   );
 }
