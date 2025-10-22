@@ -91,11 +91,12 @@ export default function Index() {
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const form = new FormData(e.currentTarget);
-    const name = String(form.get("name") || "");
-    const email = String(form.get("email") || "");
-    const subject = String(form.get("subject") || "");
-    const message = String(form.get("message") || "");
+    const formElement = e.currentTarget;
+    const formData = new FormData(formElement);
+    const name = String(formData.get("name") || "");
+    const email = String(formData.get("email") || "");
+    const subject = String(formData.get("subject") || "");
+    const message = String(formData.get("message") || "");
 
     try {
       const response = await fetch("/api/contact", {
@@ -118,7 +119,7 @@ export default function Index() {
           "Message Sent!",
           `Thanks ${name || "there"}! We've received your message and will get back to you shortly.`
         );
-        e.currentTarget.reset();
+        formElement.reset();
       } else {
         let errorMsg = data?.error || "Failed to send message. Please try again.";
 
