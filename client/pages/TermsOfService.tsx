@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import SiteHeader from "../components/layout/SiteHeader";
+import SiteFooter from "../components/layout/SiteFooter";
 
 export default function TermsOfService() {
   return (
