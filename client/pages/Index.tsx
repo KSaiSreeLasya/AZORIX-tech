@@ -88,12 +88,35 @@ export default function Index() {
 
   const [tIndex, setTIndex] = useState(0);
 
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
     const name = String(form.get("name") || "");
-    toast.success(`Thanks ${name || "there"}! We'll get back to you shortly.`);
-    e.currentTarget.reset();
+    const email = String(form.get("email") || "");
+    const subject = String(form.get("subject") || "");
+    const message = String(form.get("message") || "");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, email, subject, message }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        toast.success(`Thanks ${name || "there"}! We'll get back to you shortly.`);
+        e.currentTarget.reset();
+      } else {
+        toast.error(data.error || "Failed to send message. Please try again.");
+      }
+    } catch (error) {
+      console.error("Contact form error:", error);
+      toast.error("Failed to send message. Please try again.");
+    }
   };
 
   return (
