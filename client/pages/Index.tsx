@@ -48,21 +48,13 @@ export default function Index() {
         title: "Mobile App Development",
         desc: "Native and cross-platform mobile applications that engage users and drive business growth.",
       },
-      {
-        icon: <Cloud />,
-        title: "Cloud Solutions",
-        desc: "Scalable cloud infrastructure and migration services to optimize your operations and reduce costs.",
-      },
+   
       {
         icon: <Database />,
         title: "Data Analytics",
         desc: "Transform your data into actionable insights with our advanced analytics and visualization solutions.",
       },
-      {
-        icon: <Lock />,
-        title: "Cybersecurity",
-        desc: "Protect your digital assets with our comprehensive security assessments and solutions.",
-      },
+     
       {
         icon: <Brain />,
         title: "AI & Machine Learning",
