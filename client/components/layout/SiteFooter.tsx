@@ -43,7 +43,7 @@ export function SiteFooter() {
           <ul className="space-y-2 text-sm text-muted-foreground">
             <li>Web Development</li>
             <li>Mobile Apps</li>
-            <li>Cloud & DevOps</li>
+
             <li>Data & AI</li>
           </ul>
         </div>
