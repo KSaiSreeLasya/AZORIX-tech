@@ -15,6 +15,8 @@ import {
 } from "lucide-react";
 import { useMemo, useState } from "react";
 import { toast } from "sonner";
+import PortfolioTabs from "@/components/PortfolioTabs";
+import { showSuccessAlert, showErrorAlert } from "@/lib/alerts";
 
 function SectionTitle({
   title,
@@ -48,13 +50,13 @@ export default function Index() {
         title: "Mobile App Development",
         desc: "Native and cross-platform mobile applications that engage users and drive business growth.",
       },
-   
+
       {
         icon: <Database />,
         title: "Data Analytics",
         desc: "Transform your data into actionable insights with our advanced analytics and visualization solutions.",
       },
-     
+
       {
         icon: <Brain />,
         title: "AI & Machine Learning",
@@ -87,12 +89,62 @@ export default function Index() {
 
   const [tIndex, setTIndex] = useState(0);
 
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const form = new FormData(e.currentTarget);
-    const name = String(form.get("name") || "");
-    toast.success(`Thanks ${name || "there"}! We'll get back to you shortly.`);
-    e.currentTarget.reset();
+    const formElement = e.currentTarget;
+    const formData = new FormData(formElement);
+    const name = String(formData.get("name") || "");
+    const email = String(formData.get("email") || "");
+    const subject = String(formData.get("subject") || "");
+    const message = String(formData.get("message") || "");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, email, subject, message }),
+      });
+
+      let data: any;
+      try {
+        data = await response.json();
+      } catch {
+        data = { success: false, error: "Invalid response from server" };
+      }
+
+      if (response.ok && data.success) {
+        await showSuccessAlert(
+          "Message Sent!",
+          `Thanks ${name || "there"}! We've received your message and will get back to you shortly.`,
+        );
+        formElement.reset();
+      } else {
+        let errorMsg =
+          data?.error || "Failed to send message. Please try again.";
+
+        // Show detailed validation errors
+        if (
+          data?.details &&
+          Array.isArray(data.details) &&
+          data.details.length > 0
+        ) {
+          const detail = data.details[0];
+          if (detail.message) {
+            errorMsg = detail.message;
+          }
+        }
+
+        await showErrorAlert("Oops!", errorMsg);
+      }
+    } catch (error) {
+      console.error("Contact form error:", error);
+      await showErrorAlert(
+        "Error",
+        "Failed to send message. Please try again.",
+      );
+    }
   };
 
   return (
@@ -253,36 +305,14 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Portfolio - use provided images */}
+      {/* Portfolio */}
       <section id="portfolio" className="bg-slate-50/80 py-16 md:py-24">
         <div className="container">
           <SectionTitle
             title="Our Portfolio"
             subtitle="Explore some of our recent projects"
           />
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            <a
-              href="https://nipige.com/"
-              target="_blank"
-              rel="noreferrer noopener"
-              className="block rounded-xl overflow-hidden"
-            >
-              <img
-                src="https://cdn.builder.io/api/v1/image/assets%2F1b9c62c1213140709e07580a4ee1f322%2Fbc943ca84d2a4a93ac09b72fdb405836?format=webp&width=800"
-                alt="portfolio1"
-                className="w-full h-40 object-cover"
-              />
-            </a>
-            <a className="block rounded-xl overflow-hidden">
-              <img
-                src="https://cdn.builder.io/api/v1/image/assets%2F1b9c62c1213140709e07580a4ee1f322%2F613e7e26f2f443f391fea781db37b1bf?format=webp&width=800"
-                alt="portfolio2"
-                className="w-full h-40 object-cover"
-              />
-            </a>
-            <div className="rounded-xl border bg-gradient-to-br from-cyan-200 to-emerald-200/70 h-40" />
-            <div className="rounded-xl border bg-gradient-to-br from-cyan-200 to-emerald-200/70 h-40" />
-          </div>
+          <PortfolioTabs />
         </div>
       </section>
 
