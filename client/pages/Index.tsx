@@ -165,7 +165,7 @@ export default function Index() {
             <div className="text-center">
               <a href="https://nipige.com/" target="_blank" rel="noreferrer noopener" className="inline-block">
                 <img
-                  src="https://cdn.builder.io/api/v1/image/assets%2F1b9c62c1213140709e07580a4ee1f322%2Fa874dbe02c994e568f3a83d0c7d02aaf?format=webp&width=1200"
+                  src="https://cdn.builder.io/api/v1/image/assets%2F1b9c62c1213140709e07580a4ee1f322%2F8ccf59825cdc4ee0bea569c64455e611?format=webp&width=1200"
                   alt="Product - Simplify Food Ordering"
                   className="mx-auto w-full max-w-[720px] rounded-lg border shadow-lg"
                 />
