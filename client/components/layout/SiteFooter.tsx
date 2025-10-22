@@ -1,3 +1,6 @@
+import React from "react";
+import { Link } from "react-router-dom";
+
 export function SiteFooter() {
   return (
     <footer className="border-t bg-slate-50" id="footer">
