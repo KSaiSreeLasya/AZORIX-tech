@@ -15,12 +15,11 @@ const nav = [
 
 export function Logo({ className }: { className?: string }) {
   return (
-    <div className={cn("flex items-center gap-2", className)}>
-      <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-cyan-500 to-emerald-500 text-white grid place-items-center font-extrabold">
-        A
-      </div>
-      <span className="font-extrabold tracking-tight text-xl">Azorix</span>
-    </div>
+    <img
+      src="https://cdn.builder.io/api/v1/image/assets%2F8bf52f20c3654880b140d224131cfa2e%2F7d2091e7871d4914a98f4b957203bbbe?format=webp&width=200"
+      alt="Azorix Technologies Logo"
+      className={cn("h-8 w-auto", className)}
+    />
   );
 }
 
