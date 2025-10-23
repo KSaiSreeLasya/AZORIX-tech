@@ -19,7 +19,7 @@ export function Logo({ className }: { className?: string }) {
     <img
       src="https://cdn.builder.io/api/v1/image/assets%2F8bf52f20c3654880b140d224131cfa2e%2F7d2091e7871d4914a98f4b957203bbbe?format=webp&width=200"
       alt="Azorix Technologies Logo"
-      className={cn("h-8 w-auto", className)}
+      className={cn("h-12 w-auto", className)}
     />
   );
 }

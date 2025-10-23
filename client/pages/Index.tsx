@@ -185,13 +185,12 @@ export default function Index() {
           <div className="relative">
             <div className="absolute -top-10 -right-10 h-56 w-56 rounded-full bg-cyan-200/40 blur-3xl" />
             <div className="absolute -bottom-10 -left-10 h-56 w-56 rounded-full bg-emerald-200/40 blur-3xl" />
-            <div className="relative mx-auto aspect-[4/3] w-full max-w-[520px] rounded-2xl border bg-white p-6 shadow-xl">
-              <div className="grid h-full place-items-center rounded-xl bg-gradient-to-br from-cyan-500 to-emerald-500 text-white">
-                <div className="text-center">
-                  <Star className="mx-auto h-10 w-10" />
-                  <p className="mt-2 font-semibold">Design • Build • Scale</p>
-                </div>
-              </div>
+            <div className="relative mx-auto w-full max-w-[520px] rounded-2xl border bg-white shadow-xl overflow-hidden">
+              <img
+                src="https://images.pexels.com/photos/17483848/pexels-photo-17483848.png?auto=compress&cs=tinysrgb&w=1200&h=900&fit=crop"
+                alt="Digital technology innovation"
+                className="w-full h-full object-cover aspect-[4/3]"
+              />
             </div>
           </div>
         </div>
@@ -206,8 +205,8 @@ export default function Index() {
         <div className="grid gap-10 md:grid-cols-2 items-center">
           <div className="mx-auto w-full max-w-lg">
             <img
-              src="https://images.unsplash.com/photo-1557800636-894a64c1696f?auto=format&fit=crop&w=1200&q=80"
-              alt="About illustration"
+              src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop"
+              alt="Diverse team collaborating on technology solutions"
               className="rounded-2xl border bg-white shadow-lg w-full"
             />
           </div>
