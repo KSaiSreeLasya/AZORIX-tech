@@ -187,8 +187,8 @@ export default function Index() {
             <div className="absolute -bottom-10 -left-10 h-56 w-56 rounded-full bg-emerald-200/40 blur-3xl" />
             <div className="relative mx-auto w-full max-w-[520px] rounded-2xl border bg-white shadow-xl overflow-hidden">
               <img
-                src="https://images.pexels.com/photos/17483848/pexels-photo-17483848.png?auto=compress&cs=tinysrgb&w=1200&h=900&fit=crop"
-                alt="Digital technology innovation"
+                src="https://images.pexels.com/photos/4974922/pexels-photo-4974922.jpeg?auto=compress&cs=tinysrgb&w=1200&h=900&fit=crop"
+                alt="Modern programmer working on web development"
                 className="w-full h-full object-cover aspect-[4/3]"
               />
             </div>
