@@ -388,7 +388,8 @@ export default function Index() {
               subtitle="Get in touch and let’s talk about your next project"
             />
             <ul className="space-y-4 text-muted-foreground">
-              <li>
+            <li>
+                <li><strong className="text-foreground">Our Location:</strong></li>
                 <strong className="text-foreground">Our Location:</strong> Plot No 102,103, Temple Lane, Mythri Nagar,<br />
                 Mathrusri Nagar, K.v.rangareddy, Serilingampally,<br />
                 Hyderabad, Telangana 500049<br />
