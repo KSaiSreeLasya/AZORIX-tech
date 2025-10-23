@@ -74,21 +74,7 @@ export function SiteFooter() {
             © {new Date().getFullYear()} Azorix Technologies. All rights
             reserved.
           </p>
-          <p>
-            <Link
-              to="/privacy"
-              className="hover:text-foreground transition-colors"
-            >
-              Privacy Policy
-            </Link>
-            {" · "}
-            <Link
-              to="/terms"
-              className="hover:text-foreground transition-colors"
-            >
-              Terms & Conditions
-            </Link>
-          </p>
+         
         </div>
       </div>
     </footer>
