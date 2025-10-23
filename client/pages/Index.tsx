@@ -388,13 +388,14 @@ export default function Index() {
               subtitle="Get in touch and let’s talk about your next project"
             />
             <ul className="space-y-4 text-muted-foreground">
-            <li>
-                <strong className="text-foreground">Azorix Technologies Pvt Ltd.</strong>{" "}
-               
+              <li>
+                <strong className="text-foreground">
+                  Azorix Technologies Pvt Ltd.
+                </strong>{" "}
               </li>
               <li>
-
-                <strong className="text-foreground">Our Location:</strong> Plot No 102,103, Temple Lane, Mythri Nagar,
+                <strong className="text-foreground">Our Location:</strong> Plot
+                No 102,103, Temple Lane, Mythri Nagar,
                 <br />
                 Mathrusri Nagar, K.v.rangareddy, Serilingampally,
                 <br />
@@ -407,7 +408,8 @@ export default function Index() {
                 info@azorixtech.com
               </li>
               <li>
-                <strong className="text-foreground">Call Us:</strong> +91 9392193639
+                <strong className="text-foreground">Call Us:</strong> +91
+                9392193639
               </li>
             </ul>
           </div>
