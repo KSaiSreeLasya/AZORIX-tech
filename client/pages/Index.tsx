@@ -251,36 +251,7 @@ export default function Index() {
         </div>
       </section>
 
-      /* {/* Products - clickable image goes to nipige.com */}
-      <section id="products" className="bg-slate-50/80 py-16 md:py-24">
-        <div className="container">
-          <SectionTitle
-            title="Our Products"
-            subtitle="Discover our innovative solutions"
-          />
-
-          <div className="mx-auto max-w-4xl rounded-2xl border bg-white p-8 shadow-xl">
-            <div className="text-center">
-              <a
-                href="https://nipige.com/"
-                target="_blank"
-                rel="noreferrer noopener"
-                className="inline-block"
-              >
-                <img
-                  src="https://cdn.builder.io/api/v1/image/assets%2F1b9c62c1213140709e07580a4ee1f322%2F8ccf59825cdc4ee0bea569c64455e611?format=webp&width=1200"
-                  alt="Product - Simplify Food Ordering"
-                  className="mx-auto w-full max-w-[720px] rounded-lg border shadow-lg"
-                />
-              </a>
-              <p className="mt-4 text-muted-foreground">
-                Simplify Food Ordering Process with our Restaurant App — click
-                the image to view the live site.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section> */
+    
 
       {/* Services - enhanced UI */}
       <section id="services" className="container py-16 md:py-24">
