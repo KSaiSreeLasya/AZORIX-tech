@@ -251,7 +251,7 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Products - clickable image goes to nipige.com */}
+      /* {/* Products - clickable image goes to nipige.com */}
       <section id="products" className="bg-slate-50/80 py-16 md:py-24">
         <div className="container">
           <SectionTitle
@@ -280,7 +280,7 @@ export default function Index() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */
 
       {/* Services - enhanced UI */}
       <section id="services" className="container py-16 md:py-24">
