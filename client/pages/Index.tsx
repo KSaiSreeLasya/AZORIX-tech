@@ -389,8 +389,8 @@ export default function Index() {
             />
             <ul className="space-y-4 text-muted-foreground">
             <li>
-                <strong className="text-foreground">Email Us:</strong>{" "}
-                info@azorixtech.com
+                <strong className="text-foreground">Azorix Technologies Pvt Ltd.</strong>{" "}
+               
               </li>
               <li>
 
