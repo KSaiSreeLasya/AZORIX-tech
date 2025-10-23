@@ -389,18 +389,27 @@ export default function Index() {
             />
             <ul className="space-y-4 text-muted-foreground">
               <li>
-                <strong className="text-foreground">Our Location:</strong> Plot No 102,103, Temple Lane, Mythri Nagar,<br />
-                Mathrusri Nagar, K.v.rangareddy, Serilingampally,<br />
-                Hyderabad, Telangana 500049<br />
-                India<br />
-               
+                <strong className="text-foreground">
+                  Azorix Technologies Pvt Ltd.
+                </strong>{" "}
+              </li>
+              <li>
+                <strong className="text-foreground">Our Location:</strong> Plot
+                No 102,103, Temple Lane, Mythri Nagar,
+                <br />
+                Mathrusri Nagar, K.v.rangareddy, Serilingampally,
+                <br />
+                Hyderabad, Telangana 500049
+                <br />
+                India
               </li>
               <li>
                 <strong className="text-foreground">Email Us:</strong>{" "}
                 info@azorixtech.com
               </li>
               <li>
-                <strong className="text-foreground">Call Us:</strong> +91 9392193639
+                <strong className="text-foreground">Call Us:</strong> +91
+                9392193639
               </li>
             </ul>
           </div>
