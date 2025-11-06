@@ -17,6 +17,7 @@ import { useMemo, useState } from "react";
 import { toast } from "sonner";
 import PortfolioTabs from "@/components/PortfolioTabs";
 import { showSuccessAlert, showErrorAlert } from "@/lib/alerts";
+import { useMetaTags } from "@/hooks/use-meta-tags";
 
 function SectionTitle({
   title,
