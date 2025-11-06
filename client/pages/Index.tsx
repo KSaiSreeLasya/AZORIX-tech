@@ -39,6 +39,14 @@ function SectionTitle({
 }
 
 export default function Index() {
+  useMetaTags({
+    title:
+      "Leading Software & AI Development Company in Hyderabad | Azorix Technologies",
+    description:
+      "Azorix Technologies delivers cutting-edge digital solutions in AI, software development, IoT, and cloud computing. Empower your business with intelligent innovation and expert engineering.",
+    canonical: "https://azorix.com",
+  });
+
   const services = useMemo(
     () => [
       {
