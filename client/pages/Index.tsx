@@ -17,6 +17,7 @@ import { useMemo, useState } from "react";
 import { toast } from "sonner";
 import PortfolioTabs from "@/components/PortfolioTabs";
 import { showSuccessAlert, showErrorAlert } from "@/lib/alerts";
+import { useMetaTags } from "@/hooks/use-meta-tags";
 
 function SectionTitle({
   title,
@@ -38,6 +39,14 @@ function SectionTitle({
 }
 
 export default function Index() {
+  useMetaTags({
+    title:
+      "Leading Software & AI Development Company in Hyderabad | Azorix Technologies",
+    description:
+      "Azorix Technologies delivers cutting-edge digital solutions in AI, software development, IoT, and cloud computing. Empower your business with intelligent innovation and expert engineering.",
+    canonical: "https://azorix.com",
+  });
+
   const services = useMemo(
     () => [
       {
@@ -250,8 +259,6 @@ export default function Index() {
           </div>
         </div>
       </section>
-
-    
 
       {/* Services - enhanced UI */}
       <section id="services" className="container py-16 md:py-24">
