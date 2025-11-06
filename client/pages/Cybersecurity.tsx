@@ -2,8 +2,7 @@ import { useMetaTags } from "@/hooks/use-meta-tags";
 
 export default function Cybersecurity() {
   useMetaTags({
-    title:
-      "Cybersecurity & Data Protection Services | Azorix Technologies",
+    title: "Cybersecurity & Data Protection Services | Azorix Technologies",
     description:
       "Secure your digital assets with Azorix's cybersecurity solutions — including network defense, data encryption, and threat detection for enterprises.",
     canonical: "https://azorix.com/cybersecurity",

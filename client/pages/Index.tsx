@@ -260,8 +260,6 @@ export default function Index() {
         </div>
       </section>
 
-    
-
       {/* Services - enhanced UI */}
       <section id="services" className="container py-16 md:py-24">
         <SectionTitle

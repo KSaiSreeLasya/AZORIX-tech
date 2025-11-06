@@ -2,7 +2,8 @@ import { useMetaTags } from "@/hooks/use-meta-tags";
 
 export default function Services() {
   useMetaTags({
-    title: "Software Development, AI & IoT Solutions | Azorix Technologies Hyderabad",
+    title:
+      "Software Development, AI & IoT Solutions | Azorix Technologies Hyderabad",
     description:
       "Discover innovative software, AI, and IoT services by Azorix Technologies. From web apps to enterprise automation — we build scalable, secure, and smart digital systems.",
     canonical: "https://azorix.com/services",
@@ -20,14 +21,16 @@ export default function Services() {
           <div className="bg-slate-700 p-8 rounded-lg">
             <h2 className="text-2xl font-bold mb-4">Software Development</h2>
             <p className="text-slate-300">
-              Custom software solutions built with modern technologies and best practices.
+              Custom software solutions built with modern technologies and best
+              practices.
             </p>
           </div>
 
           <div className="bg-slate-700 p-8 rounded-lg">
             <h2 className="text-2xl font-bold mb-4">AI & Machine Learning</h2>
             <p className="text-slate-300">
-              Intelligent systems powered by advanced AI and machine learning algorithms.
+              Intelligent systems powered by advanced AI and machine learning
+              algorithms.
             </p>
           </div>
 

@@ -2,8 +2,7 @@ import { useMetaTags } from "@/hooks/use-meta-tags";
 
 export default function Blog() {
   useMetaTags({
-    title:
-      "Tech Insights & AI Innovations | Azorix Technologies Blog",
+    title: "Tech Insights & AI Innovations | Azorix Technologies Blog",
     description:
       "Read the latest insights, tutorials, and technology trends from Azorix Technologies. Stay ahead in AI, web development, and digital transformation.",
     canonical: "https://azorix.com/blog",
@@ -65,7 +64,8 @@ export default function Blog() {
       <div className="container mx-auto px-4 py-16">
         <h1 className="text-4xl md:text-5xl font-bold mb-4">Blog & Insights</h1>
         <p className="text-xl text-slate-300 mb-12">
-          Latest news, insights, and tutorials on technology and digital innovation
+          Latest news, insights, and tutorials on technology and digital
+          innovation
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

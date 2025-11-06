@@ -2,8 +2,7 @@ import { useMetaTags } from "@/hooks/use-meta-tags";
 
 export default function Contact() {
   useMetaTags({
-    title:
-      "Contact Azorix Technologies | Software & AI Experts in Hyderabad",
+    title: "Contact Azorix Technologies | Software & AI Experts in Hyderabad",
     description:
       "Get in touch with Azorix Technologies for project consultations, partnerships, or career inquiries. Let's build something extraordinary together.",
     canonical: "https://azorix.com/contact",
@@ -60,15 +59,16 @@ export default function Contact() {
             <div className="space-y-6">
               <div>
                 <h3 className="font-bold mb-2">Address</h3>
-                <p className="text-slate-300">
-                  Hyderabad, Telangana, India
-                </p>
+                <p className="text-slate-300">Hyderabad, Telangana, India</p>
               </div>
 
               <div>
                 <h3 className="font-bold mb-2">Email</h3>
                 <p className="text-slate-300">
-                  <a href="mailto:info@azorix.com" className="hover:text-blue-400">
+                  <a
+                    href="mailto:info@azorix.com"
+                    className="hover:text-blue-400"
+                  >
                     info@azorix.com
                   </a>
                 </p>

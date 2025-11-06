@@ -2,8 +2,7 @@ import { useMetaTags } from "@/hooks/use-meta-tags";
 
 export default function ArtificialIntelligence() {
   useMetaTags({
-    title:
-      "AI & Machine Learning Development Company | Azorix Technologies",
+    title: "AI & Machine Learning Development Company | Azorix Technologies",
     description:
       "Transform your business with AI-powered applications, predictive analytics, and machine learning models built by Azorix Technologies' data science experts.",
     canonical: "https://azorix.com/artificial-intelligence",
@@ -23,7 +22,8 @@ export default function ArtificialIntelligence() {
           <div className="bg-slate-700 p-8 rounded-lg">
             <h2 className="text-2xl font-bold mb-4">Machine Learning</h2>
             <p className="text-slate-300">
-              Custom ML models and algorithms for business intelligence and automation.
+              Custom ML models and algorithms for business intelligence and
+              automation.
             </p>
           </div>
 

@@ -42,11 +42,10 @@ export default function VLSISemiconductor() {
           </div>
 
           <div className="bg-slate-700 p-8 rounded-lg">
-            <h2 className="text-2xl font-bold mb-4">
-              Design Verification
-            </h2>
+            <h2 className="text-2xl font-bold mb-4">Design Verification</h2>
             <p className="text-slate-300">
-              Comprehensive verification and validation of semiconductor designs.
+              Comprehensive verification and validation of semiconductor
+              designs.
             </p>
           </div>
         </div>

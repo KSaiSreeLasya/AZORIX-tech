@@ -2,8 +2,7 @@ import { useMetaTags } from "@/hooks/use-meta-tags";
 
 export default function AutomationRobotics() {
   useMetaTags({
-    title:
-      "AI-Powered Automation & Robotics Development | Azorix Technologies",
+    title: "AI-Powered Automation & Robotics Development | Azorix Technologies",
     description:
       "Enhance productivity through robotics, IoT integration, and AI-driven automation solutions built by Azorix Technologies' innovation experts.",
     canonical: "https://azorix.com/automation-robotics",
@@ -30,7 +29,8 @@ export default function AutomationRobotics() {
           <div className="bg-slate-700 p-8 rounded-lg">
             <h2 className="text-2xl font-bold mb-4">Robotics Solutions</h2>
             <p className="text-slate-300">
-              Custom robotic systems for manufacturing and industrial operations.
+              Custom robotic systems for manufacturing and industrial
+              operations.
             </p>
           </div>
 

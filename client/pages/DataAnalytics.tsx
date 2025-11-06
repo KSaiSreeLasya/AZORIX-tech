@@ -12,9 +12,7 @@ export default function DataAnalytics() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-900 to-slate-800 text-white">
       <div className="container mx-auto px-4 py-16">
-        <h1 className="text-4xl md:text-5xl font-bold mb-4">
-          Data Analytics
-        </h1>
+        <h1 className="text-4xl md:text-5xl font-bold mb-4">Data Analytics</h1>
         <p className="text-xl text-slate-300 mb-8">
           Transform data into actionable insights with advanced analytics
         </p>
