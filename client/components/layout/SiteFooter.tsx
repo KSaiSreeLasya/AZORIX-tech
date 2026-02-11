@@ -73,6 +73,7 @@ export function SiteFooter() {
           <p>
             © {new Date().getFullYear()} Azorix Technologies. All rights
             reserved.
+            <br/>Designed and Developed by Axisphere Mediaworx.
           </p>
          
         </div>
