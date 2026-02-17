@@ -2,6 +2,13 @@ import path from "path";
 import { createServer } from "./index";
 import express from "express";
 
+// Log environment at startup
+console.log("🔍 Server startup diagnostics:");
+console.log("NODE_ENV:", process.env.NODE_ENV);
+console.log("PORT:", process.env.PORT || "3000 (default)");
+console.log("SUPABASE_URL configured:", !!process.env.SUPABASE_URL);
+console.log("SUPABASE_ANON_KEY configured:", !!process.env.SUPABASE_ANON_KEY);
+
 const app = createServer();
 const port = Number(process.env.PORT) || 3000;
 
