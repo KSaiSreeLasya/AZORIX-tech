@@ -16,16 +16,19 @@ export type ContactFormData = z.infer<typeof ContactSchema>;
 export const handleContactSubmission: RequestHandler = async (req, res) => {
   try {
     if (req.method !== "POST") {
-      return res.status(405).json({ error: "Method not allowed", success: false });
+      return res.status(405).json({
+        success: false,
+        error: "Method not allowed",
+      });
     }
 
     const validationResult = ContactSchema.safeParse(req.body);
 
     if (!validationResult.success) {
       return res.status(400).json({
+        success: false,
         error: "Validation failed",
         details: validationResult.error.errors,
-        success: false,
       });
     }
 
@@ -84,8 +87,8 @@ export const handleContactSubmission: RequestHandler = async (req, res) => {
   } catch (error) {
     console.error("Contact submission error:", error);
     return res.status(500).json({
-      error: "Internal server error",
       success: false,
+      error: "Internal server error. Please try again later.",
     });
   }
 };
