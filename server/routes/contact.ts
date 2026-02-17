@@ -70,22 +70,23 @@ export const handleContactSubmission: RequestHandler = async (req, res) => {
           console.log("Contact saved to Supabase successfully");
         }
       } catch (supabaseError) {
-        console.warn("Supabase connection error:", supabaseError);
+        console.warn("Supabase connection error:", supabaseError instanceof Error ? supabaseError.message : supabaseError);
         // Don't fail - continue with success response
       }
     } else {
-      console.warn("Supabase credentials not fully configured");
+      console.log("Supabase not configured - contact form will not persist to database");
     }
 
     // Always return success to the client after validation passes
     // This ensures the user gets feedback that their message was received
-    return res.status(201).json({
+    const response = {
       success: true,
       message:
         "Thank you! We've received your message and will get back to you shortly.",
-    });
+    };
+    return res.status(201).json(response);
   } catch (error) {
-    console.error("Contact submission error:", error);
+    console.error("Contact submission error:", error instanceof Error ? error.message : error);
     return res.status(500).json({
       success: false,
       error: "Internal server error. Please try again later.",
