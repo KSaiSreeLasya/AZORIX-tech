@@ -116,13 +116,23 @@ export default function Index() {
         body: JSON.stringify({ name, email, subject, message }),
       });
 
-      let data: any;
-      try {
-        data = await response.json();
-      } catch {
+      let data: any = {};
+      const contentType = response.headers.get("content-type");
+
+      // Only attempt to parse as JSON if the response has JSON content type
+      if (contentType?.includes("application/json")) {
+        try {
+          data = await response.json();
+        } catch (parseError) {
+          console.error("Failed to parse JSON response:", parseError);
+          data = { success: false, error: "Invalid response format from server" };
+        }
+      } else {
+        // If not JSON, it's likely an error page or unexpected response
         data = { success: false, error: "Invalid response from server" };
       }
 
+      // Check for success - both response.ok and data.success should be true
       if (response.ok && data.success) {
         await showSuccessAlert(
           "Message Sent!",
@@ -133,7 +143,7 @@ export default function Index() {
         let errorMsg =
           data?.error || "Failed to send message. Please try again.";
 
-        // Show detailed validation errors
+        // Show detailed validation errors if available
         if (
           data?.details &&
           Array.isArray(data.details) &&
@@ -149,9 +159,10 @@ export default function Index() {
       }
     } catch (error) {
       console.error("Contact form error:", error);
+      const errorMessage = error instanceof Error ? error.message : "Failed to send message. Please try again.";
       await showErrorAlert(
         "Error",
-        "Failed to send message. Please try again.",
+        errorMessage,
       );
     }
   };

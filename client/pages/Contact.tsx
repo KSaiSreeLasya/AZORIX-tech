@@ -88,9 +88,23 @@ export default function Contact() {
         body: JSON.stringify(formData),
       });
 
-      const data = await response.json();
+      let data: any = {};
+      const contentType = response.headers.get("content-type");
 
-      if (!response.ok) {
+      // Only attempt to parse as JSON if the response has JSON content type
+      if (contentType?.includes("application/json")) {
+        try {
+          data = await response.json();
+        } catch (parseError) {
+          console.error("Failed to parse JSON response:", parseError);
+          throw new Error("Invalid response format from server");
+        }
+      } else {
+        throw new Error("Invalid response from server");
+      }
+
+      // Check for success
+      if (!response.ok || !data.success) {
         throw new Error(data.error || "Failed to submit form");
       }
 
