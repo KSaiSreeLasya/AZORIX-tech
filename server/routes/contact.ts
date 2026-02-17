@@ -34,10 +34,16 @@ export const handleContactSubmission: RequestHandler = async (req, res) => {
     const supabaseUrl = process.env.SUPABASE_URL;
     const supabaseKey = process.env.SUPABASE_ANON_KEY;
 
+    console.log("Checking environment variables:", {
+      supabaseUrlExists: !!supabaseUrl,
+      supabaseKeyExists: !!supabaseKey,
+      supabaseUrl: supabaseUrl?.substring(0, 20) + "...",
+    });
+
     if (!supabaseUrl || !supabaseKey) {
       console.error("Supabase credentials not configured");
       return res.status(500).json({
-        error: "Server configuration error",
+        error: "Server configuration error - Missing SUPABASE_URL or SUPABASE_ANON_KEY",
         success: false,
       });
     }
@@ -60,9 +66,14 @@ export const handleContactSubmission: RequestHandler = async (req, res) => {
 
     if (!response.ok) {
       const errorText = await response.text();
-      console.error("Supabase error:", response.status, errorText);
+      console.error("Supabase error:", {
+        status: response.status,
+        statusText: response.statusText,
+        error: errorText,
+        url: `${supabaseUrl}/rest/v1/contacts`,
+      });
       return res.status(500).json({
-        error: "Failed to save contact submission",
+        error: `Supabase error: ${response.status} - ${errorText}`,
         success: false,
       });
     }
